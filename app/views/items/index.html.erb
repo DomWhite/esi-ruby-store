@@ -1,0 +1,22 @@
+<div class="mdl-grid">
+    <h4>Products</h4>
+</div>
+<div class="mdl-grid">
+    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+    <tr>
+        <th class="mdl-data-table__cell--non-numeric">Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th></th>
+    </tr>
+    
+    <% @items.each do |item| %>
+        <tr>
+            <td class="mdl-data-table__cell--non-numeric"><%= item.name %></td>
+            <td>£<%= item.price %></td>
+            <td><%= item.description %></td>
+            <td><%= link_to 'View', item_path(item) %></td>
+        </tr>
+    <% end %>
+    </table>
+</div>
