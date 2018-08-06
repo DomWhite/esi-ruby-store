@@ -13,7 +13,7 @@
     <% @items.each do |item| %>
         <tr>
             <td class="mdl-data-table__cell--non-numeric"><%= item.name %></td>
-            <td>£<%= item.price %></td>
+            <td><%= number_to_currency(item.price, :locale => :gb) %></td>
             <td><%= item.description %></td>
             <td><%= link_to 'View', item_path(item) %></td>
         </tr>

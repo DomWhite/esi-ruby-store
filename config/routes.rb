@@ -4,4 +4,9 @@ Rails.application.routes.draw do
   resources :items
 
   root 'store#index'
+
+  #api routes
+
+  get '/api/items' => 'store#show'
+
 end
