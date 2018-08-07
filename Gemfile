@@ -13,7 +13,9 @@ gem 'rails', '~> 5.1.3'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+#gem 'puma', '~> 3.7'
+# Use Phusion Passenger as the app server
+gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -35,6 +37,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Figaro is an environment variable manager
+gem 'figaro'
 # Material design for ruby
 gem 'material_design_lite-sass'
 
@@ -50,10 +54,11 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'capistrano'
-  gem 'capistrano3-puma'
+  gem 'capistrano-passenger', '>= 0.1.1'
   gem 'capistrano-rails', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rvm'
+  gem 'capistrano-figaro-yml', '~> 1.0.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
