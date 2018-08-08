@@ -13,9 +13,9 @@ gem 'rails', '~> 5.1.3'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
-#gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.7'
 # Use Phusion Passenger as the app server
-gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
+# gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -54,7 +54,7 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'capistrano'
-  gem 'capistrano-passenger', '>= 0.1.1'
+  gem 'capistrano3-puma'
   gem 'capistrano-rails', require: false
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rvm'

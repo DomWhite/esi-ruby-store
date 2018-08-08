@@ -59,3 +59,11 @@ server '52.215.31.8', user: 'deploy', roles: %w{web app db}
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+role :app, %w{deploy_user@34.245.69.228}
+role :web, %w{deploy_user@34.245.69.228}
+role :db,  %w{deploy_user@34.245.69.228}
+set :ssh_options, {
+   keys: %w("C:\Users\dominic.white\Downloads\dom-white-test.pem"),
+   forward_agent: false,
+   auth_methods: %w(publickey password)
+ }
